@@ -1,0 +1,11 @@
+import pygame
+from constants import *
+from circleshape import CircleShape
+class Shot(CircleShape):
+    fire_red = (203,49,7)
+    def __init__(self,x,y):
+        super().__init__(x,y,SHOT_RADIUS)
+    def draw(self,screen):
+        pygame.draw.circle(screen,Shot.fire_red,self.position,self.radius)
+    def update(self,delta):
+        self.position += self.velocity * delta
