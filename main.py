@@ -39,7 +39,7 @@ def main():
             for shot in shots:
                 if asteroid.collision_detected(shot):
                     shot.kill()
-                    asteroid.kill()
+                    asteroid.split()
         #rendering
         screen.fill("black")
         for obj in drawable:
